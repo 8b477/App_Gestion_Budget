@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="./style.css">
+    <title>Projet Budget</title>
+</head>
+<body>
+
+    <div id="wrapGlobal">
+        <h1>Gère ton budget !</h1>
+
+        <div id="wrapUp">
+            <h2>Mes dépenses fixes.</h2>
+
+            <input type="number" value="0" name="loyer" id="loyer" placeholder="loyer et charges" required>
+            <input type="number" value="0" name="credits" id="credits" placeholder="remboursement crédits" required>
+            <input type="number" value="0" name="eau, électricité, gaz" id="conso" placeholder="eau/électricité/gaz" required>
+            <input type="number" value="0" name="gsm" id="gsm" placeholder="téléphone / internet" required>
+            <input type="number" value="0" name="assurance" id="assurance" placeholder="assurance habitation">
+            <input type="number" value="0" name="assuranceV" id="assuranceV" placeholder="assurance véhicules">
+            <input type="number" value="0" name="mutuelle" id="mutuelle" placeholder="mutuelle santé">
+            <input type="number" value="0" name="garde" id="garde" placeholder="frais de garde">
+            <input type="number" value="0" name="impot" id="impot" placeholder="impôts sur le revenu">
+            <input type="number" value="0" name="impotLocal" id="impotLocal" placeholder="impôts locaux">
+
+            <!-- Total de la première partie des dépenses -->
+            <div class="total"><button type="button" id="btnOne">Total des dépenses = €</button><span id="totalEurOne"></span></div>
+
+        </div>
+
+        <hr>
+
+        <div id="wrapMidle">
+            <h2>Mes dépenses courantes.</h2>
+
+            <input type="number" value="0"  name="courses" id="courses" placeholder="Coût des course sur le mois">
+            <input type="number" value="0"  name="sportCulture" id="sportCulture" placeholder="Sport, culture sur le mois">
+
+            <!-- Total de la deuxieme partie des dépenses -->
+            <div class="total"><button type="button" id="btnTwo">Total des dépenses = €</button><span id="totalEurTwo"></span></div>
+        </div>
+
+        <hr>
+
+        <div id="wrapDown">
+
+            <h2>Mes dépense ocasionnelles.</h2>
+            <input type="number" value="0"  name="sorties" id="sorties" placeholder="dépenses sorties/mois">
+
+            <!-- Total de la troisieme partie des dépenses -->
+            <div class="total"><button type="button" id="btnThree">Total des dépenses = €</button><span id="totalEurThree"></span></div>
+        </div>
+
+        <hr>
+
+        <h2 id="title">Mes autres dépenses.</h2>
+        <br>
+        <input type="number" value="0"  name="extra" id="extra" placeholder="Extra">
+
+
+        <hr>
+
+        <div id="recette">
+
+            <h2>Entre tes revenus.</h2>
+
+            <input type="number" value="0"  name="salaire" id="salaire" placeholder="salaire">
+            <input type="number" value="0"  name="aide" id="aide" placeholder="aides / allocations">
+            <input type="number" value="0"  name="rente" id="rente" placeholder="rentes">
+            <input type="number" value="0"  name="autres" id="autres" placeholder="autres">
+
+        </div>
+
+
+        <div id="résultat">
+<!-- - Afficher un message différent en fonction du résultat (budget négatif, budget nul, budget positif)
+- Si le budget est positif, proposez une dépense en fonction de la somme restante -->
+            <div class="totalGlobal"><button type="button" id="btnEnd">Total Global = €</button><span id="totalEurEnd"></span></div>
+        </div>
+
+
+
+    </div>
+
+
+
+
+<script src="./app.js"></script>
+</body>
+</html>
