@@ -66,16 +66,8 @@ btnThree.addEventListener('click', function (){
 })
 
 btnEnd.addEventListener('click', function (){
-    totalEurEnd.innerHTML = parseInt(salaire.value) + parseInt(aide.value) + parseInt(rente.value) +
-        parseInt(autres.value) - parseInt(loyer.value) + parseInt(credits.value) + parseInt(conso.value) + parseInt(gsm.value)
+    totalEurEnd.innerHTML = (parseInt(salaire.value) + parseInt(aide.value) + parseInt(rente.value) +
+        parseInt(autres.value)) - (parseInt(loyer.value) + parseInt(credits.value) + parseInt(conso.value) + parseInt(gsm.value)
         + parseInt(assurance.value) + parseInt(assuranceV.value) + parseInt(mutuelle.value) + parseInt(garde.value)
-       + parseInt(impot.value) + parseInt(impotLocal.value)
+       + parseInt(impot.value) + parseInt(impotLocal.value))
 })
-
-
-// function addition(...elements){
-//     for (let element of elements){
-//         totalEurOne.innerHTML = parseInt(element.value) + parseInt(element.value);
-//     }
-// }
-
