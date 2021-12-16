@@ -30,7 +30,7 @@ const totalEurTwo = document.getElementById('totalEurTwo');
 const sorties = document.getElementById('sorties');
 
 //recup btn
-const btnThree = document.getElementById('btnThree');
+const btnThree = document.getElementById('btnEnd');
 
 //recup span to display result
 const totalEurThree = document.getElementById('totalEurThree');
@@ -50,24 +50,54 @@ const btnEnd = document.getElementById('btnEnd');
 //recup span to display result
 const totalEurEnd = document.getElementById('totalEurEnd');
 
-btnOne.addEventListener('click', function (){
-    totalEurOne.innerHTML = parseInt(loyer.value) + parseInt(credits.value) + parseInt(conso.value) + parseInt(gsm.value)
-        + parseInt(assurance.value) + parseInt(assuranceV.value) + parseInt(mutuelle.value) + parseInt(garde.value)
-        + parseInt(impot.value) + parseInt(impotLocal.value);
+btnOne.addEventListener('click', function () {
+    calcOne();
 })
 
-btnTwo.addEventListener('click',function (){
-    totalEurTwo.innerHTML = parseInt(courses.value) + parseInt(sportCulture.value);
+btnTwo.addEventListener('click', function () {
+    calcTwo();
 })
 
 
-btnThree.addEventListener('click', function (){
+btnThree.addEventListener('click', function () {
     totalEurThree.innerHTML = parseInt(extra.value);
 })
 
-btnEnd.addEventListener('click', function (){
-    totalEurEnd.innerHTML = (parseInt(salaire.value) + parseInt(aide.value) + parseInt(rente.value) +
-        parseInt(autres.value)) - (parseInt(loyer.value) + parseInt(credits.value) + parseInt(conso.value) + parseInt(gsm.value)
-        + parseInt(assurance.value) + parseInt(assuranceV.value) + parseInt(mutuelle.value) + parseInt(garde.value)
-       + parseInt(impot.value) + parseInt(impotLocal.value))
+btnEnd.addEventListener('click', function (e) {
+    calcTotal();
+    if(totalEurEnd.innerHTML > 0){
+        alert('Full benef waow !')
+    }
+    else{
+        alert('Attention zone rouge');
+    }
 })
+
+function calcOne() {
+    totalEurOne.innerHTML = parseInt(loyer.value)
+        + parseInt(credits.value) + parseInt(conso.value)
+        + parseInt(gsm.value) + parseInt(assurance.value)
+        + parseInt(assuranceV.value) + parseInt(mutuelle.value)
+        + parseInt(garde.value) + parseInt(impot.value)
+        + parseInt(impotLocal.value);
+}
+
+function calcTwo() {
+    totalEurTwo.innerHTML = (parseInt(courses.value) + parseInt(sportCulture.value)).toString();
+}
+
+function calcTotal() {
+    totalEurEnd.innerHTML = (parseInt(salaire.value)
+        + parseInt(aide.value)
+        + parseInt(rente.value)
+        + parseInt(autres.value)
+        - parseInt(loyer.value)
+        - parseInt(credits.value)
+        - parseInt(conso.value)
+        - parseInt(gsm.value) - parseInt(assurance.value)
+        - parseInt(assuranceV.value) - parseInt(mutuelle.value)
+        - parseInt(garde.value) - parseInt(impot.value)
+        - parseInt(impotLocal.value)
+        - parseInt(courses.value) - parseInt(sportCulture.value)).toString();
+}
+
