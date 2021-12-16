@@ -51,7 +51,9 @@ const btnEnd = document.getElementById('btnEnd');
 const totalEurEnd = document.getElementById('totalEurEnd');
 
 btnOne.addEventListener('click', function (){
-    addition(loyer, credits, conso, gsm, assurance, assuranceV, mutuelle, garde, impot, impotLocal)
+    totalEurOne.innerHTML = parseInt(loyer.value) + parseInt(credits.value) + parseInt(conso.value) + parseInt(gsm.value)
+        + parseInt(assurance.value) + parseInt(assuranceV.value) + parseInt(mutuelle.value) + parseInt(garde.value)
+        + parseInt(impot.value) + parseInt(impotLocal.value);
 })
 
 btnTwo.addEventListener('click',function (){
@@ -64,17 +66,16 @@ btnThree.addEventListener('click', function (){
 })
 
 btnEnd.addEventListener('click', function (){
-    totalEurEnd.innerHTML = (parseInt(salaire.value) + parseInt(aide.value) + parseInt(rente.value) +
-        parseInt(autres.value)) - (parseInt(totalEurTwo.value) + parseInt(totalEurOne.value));
+    totalEurEnd.innerHTML = parseInt(salaire.value) + parseInt(aide.value) + parseInt(rente.value) +
+        parseInt(autres.value) - parseInt(loyer.value) + parseInt(credits.value) + parseInt(conso.value) + parseInt(gsm.value)
+        + parseInt(assurance.value) + parseInt(assuranceV.value) + parseInt(mutuelle.value) + parseInt(garde.value)
+       + parseInt(impot.value) + parseInt(impotLocal.value)
 })
 
 
-function addition(...elements){
-    for (let element of elements){
-        totalEurOne.innerHTML = parseInt(element.value) + parseInt(element.value);
-    }
-}
+// function addition(...elements){
+//     for (let element of elements){
+//         totalEurOne.innerHTML = parseInt(element.value) + parseInt(element.value);
+//     }
+// }
 
-// totalEurOne.innerHTML = parseInt(loyer.value) + parseInt(credits.value) + parseInt(conso.value) + parseInt(gsm.value)
-//     + parseInt(assurance.value) + parseInt(assuranceV.value) + parseInt(mutuelle.value) + parseInt(garde.value)
-//     + parseInt(impot.value) + parseInt(impotLocal.value);
